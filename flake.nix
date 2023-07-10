@@ -20,14 +20,12 @@
           buildInputs=  [ pkgs.hugo ];
 
           buildPhase = ''
-            ls -al
             hugo
           '';
 
           installPhase = ''
             mkdir -p $out
-            tar -C public -cvz . > site.tar.gz
-            cp -r site.tar.gz $out
+            cp -r public/* $out
           '';
         };
       });
