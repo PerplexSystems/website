@@ -1,0 +1,5 @@
+baseURL = 'https://glorifiedgluer.srht.site/perplex-systems/'
+languageCode = 'en-us'
+title = 'Perplex Systems'
+
+theme = "Hare"

@@ -1,0 +1,18 @@
+{{ define "title" }}
+  {{ .Title }}
+{{ end }}
+
+{{ define "main" }}
+  {{ range .Data.Pages }}
+  <div class="stub">
+    <h2>
+      <a href="{{.Permalink}}">
+        {{.Title}}
+      </a>
+    </h2>
+    <small>
+      {{.Params.summary}}
+    </small>
+  </div>
+  {{ end }}
+{{ end }}

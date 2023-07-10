@@ -1,0 +1,17 @@
+name: "Deploy website"
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: cachix/install-nix-action@v20
+      with:
+        github_access_token: ${{ secrets.GITHUB_TOKEN }}
+    - run: nix build
+    - uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: ./result
+        clean: true
