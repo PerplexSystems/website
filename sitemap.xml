@@ -2,18 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://perplex.systems/</loc>
-    <lastmod>1999-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://perplex.systems/projects/</loc>
-    <lastmod>1999-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://perplex.systems/projects/smltest/</loc>
-    <lastmod>1999-01-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://perplex.systems/404/</loc>
   </url><url>
+    <loc>https://perplex.systems/</loc>
+  </url><url>
     <loc>https://perplex.systems/categories/</loc>
+  </url><url>
+    <loc>https://perplex.systems/projects/</loc>
+  </url><url>
+    <loc>https://perplex.systems/projects/smltest/</loc>
   </url><url>
     <loc>https://perplex.systems/tags/</loc>
   </url>
