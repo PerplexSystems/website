@@ -3,9 +3,6 @@
 
 name = "Hare"
 license = "Apache 2.0"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
-homepage = "http://example.com/"
 
 [author]
   name = ""

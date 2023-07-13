@@ -3,16 +3,18 @@
 {{ end }}
 
 {{ define "main" }}
-  {{ range .Data.Pages }}
-  <div class="stub">
-    <h2>
-      <a href="{{.Permalink}}">
-        {{.Title}}
-      </a>
-    </h2>
-    <small>
-      {{.Params.summary}}
-    </small>
-  </div>
-  {{ end }}
+    <h2>{{ .Title }}</h2>
+    {{ range .Data.Pages  }}
+    <div class="stub">
+      <h2>
+        <a href="{{.RelPermalink}}"> {{.Title}} </a>
+      </h2>
+      
+        {{ with .Date }}
+          <small>
+            {{- .Format "January 2, 2006" -}}
+          </small>
+        {{ end }}
+    </div>
+    {{ end  }}
 {{ end }}
