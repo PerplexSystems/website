@@ -241,11 +241,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1689223543,
-        "narHash": "sha256-v7cai956Hok0FAS/QRQIHeTADZmso/R2I62HxazqQ4c=",
+        "lastModified": 1689264023,
+        "narHash": "sha256-e11vph5hUt5SCgSQrDBseX3QIS7+4psYEKgIJFpoYB4=",
         "owner": "PerplexSystems",
         "repo": "smltest",
-        "rev": "c03f53c3b2c7d3bedecad9e8089f51ce58e6cb3f",
+        "rev": "dd3e3a5a2d64015d98d5d2799286a388d7bc8d73",
         "type": "github"
       },
       "original": {
