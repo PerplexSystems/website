@@ -24,7 +24,7 @@
       <description>An advanced testing library and test runner for Standard ML, highly inspired by elm-test and Expecto.
 This library provides a set of composable functions for writing tests, along with a built-in test runner.
 Quickstart Here is a simple example of how tests can look:
-val tests = describe &amp;#34;math operations&amp;#34; [ test &amp;#34;sum 1 + 1&amp;#34; (fn _ =&amp;gt; Expect.equal Int.compare 2 (1 + 1)) ] val _ = run tests smltest Quickstart Installing API Reference Test concat describe focus run skip test Expect Installing API Reference Test The Test module consists of functions that are involved in creating and managing tests.</description>
+val tests = describe &amp;#34;math operations&amp;#34; [ test &amp;#34;sum 1 + 1&amp;#34; (fn _ =&amp;gt; Expect.equal Int.compare 2 (1 + 1)) ] val _ = run tests Check out the table of contents below for more information:</description>
     </item>
     
   </channel>
