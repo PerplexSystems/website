@@ -7,15 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://perplex.systems/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>https://perplex.systems/404/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://perplex.systems/404/</guid>
-      <description>not found</description>
-    </item>
-    
-    <item>
       <title>smltest</title>
       <link>https://perplex.systems/projects/smltest/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -23,7 +14,7 @@
       <guid>https://perplex.systems/projects/smltest/</guid>
       <description>An advanced testing library and test runner for Standard ML, highly inspired by elm-test and Expecto.
 This library provides a set of composable functions for writing tests, along with a built-in test runner.
-Usage val tests = describe &amp;#34;math operations&amp;#34; [ test &amp;#34;sum 1 + 1&amp;#34; (fn _ =&amp;gt; Expect.equal Int.compare 2 (1 + 1)) ] val _ = run tests Check out the table of contents below for more information:</description>
+Usage # val tests = describe &amp;#34;math operations&amp;#34; [ test &amp;#34;sum 1 + 1&amp;#34; (fn _ =&amp;gt; Expect.equal Int.compare 2 (1 + 1)) ] val _ = run tests Check out the table of contents below for more information:</description>
     </item>
     
   </channel>
