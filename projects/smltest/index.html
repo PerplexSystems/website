@@ -1,54 +1,34 @@
-<!DOCTYPE html>
-<html lang="en-us"><head>
-<title>smltest - Perplex Systems</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description"
-    content="An advanced testing library and test runner for Standard ML, highly inspired by elm-test and Expecto.
-This library provides a set of composable functions for writing tests, along with a built-in test runner.
-Usage # val tests = describe &#34;math operations&#34; [ test &#34;sum 1 &#43; 1&#34; (fn _ =&gt; Expect.equal Int.compare 2 (1 &#43; 1)) ] val _ = run tests Check out the table of contents below for more information: ">
-<link rel="canonical" href="https://perplex.systems/projects/smltest/" />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perplex Systems</title>
+    <link rel="icon" type="image/png" href="/logo.jpeg">
+    
+    <link rel="stylesheet" href="/main.min.eb2bed32969677b0fabe46ce379de67bc0acf03a6738168b9ccc0f2d8c07efca.css">
+  </head>
+  <body>
+    <nav>
+  <a href="/">
+    <img
+      src="https://perplex.systems/logo.jpeg"
+      alt="A drawing of a train."
+      width="128" height="128" />
+  </a>
+  <h1>Perplex Systems</h1>
+  <ul>
+    <li><a href="https://perplex.systems/">Home</a></li>
+    <li><a href="https://perplex.systems/projects">Projects</a></li>
+    <li><a href="https://github.com/perplexsystems/">Source code</a></li>
+  </ul>
+</nav>
 
 
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/hugo-tufte.min.css">
-
-
-
-<link rel="stylesheet" href="/css/hugo-tufte-options.min.css">
-
-<link rel="stylesheet" href="/css/hugo-tufte-override.css">
-
-</head>
-<body>
-
-
-<article id="main">
-  <section>
-<h1 class="content-title">smltest</h1></section>
-
-  
-
-  <section><p><a href="https://github.com/PerplexSystems/smltest/actions"><img src="https://github.com/PerplexSystems/smltest/actions/workflows/build.yml/badge.svg" alt="Build Status"></a>
+    <main>
+  <h1>smltest
+    
+  </h1><p><a href="https://github.com/PerplexSystems/smltest/actions"><img src="https://github.com/PerplexSystems/smltest/actions/workflows/build.yml/badge.svg" alt="Build Status"></a>
 <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
 <a href="http://webchat.freenode.net/?channels=writeas"><img src="https://img.shields.io/badge/libera.chat-%23perplexsystems-blue.svg" alt="Perplex Systems on libera.chat"></a></p>
 <p>An advanced testing library and test runner for Standard ML, highly
@@ -56,18 +36,15 @@ inspired by <a href="https://github.com/elm-explorations/test">elm-test</a> and
 <a href="https://github.com/haf/expecto">Expecto</a>.</p>
 <p>This library provides a set of composable functions for writing tests,
 along with a built-in test runner.</p>
-<h2 id="usage">
-Usage
-<a href="#usage" class="heading-anchor">#</a>
-</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="kr">val</span> <span class="nv">tests</span> <span class="p">=</span>
-</span></span><span class="line"><span class="cl">  <span class="n">describe</span> <span class="s2">&#34;math operations&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="n">test</span> <span class="s2">&#34;sum 1 + 1&#34;</span> <span class="p">(</span><span class="kr">fn</span> <span class="p">_</span> <span class="n">=&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nn">Expect.</span><span class="n">equal</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">2</span> <span class="p">(</span><span class="mi">1</span> <span class="n">+</span> <span class="mi">1</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">val</span> <span class="p">_</span> <span class="n">=</span>
-</span></span><span class="line"><span class="cl">    <span class="n">run</span> <span class="n">tests</span>
+<h2 id="usage">Usage</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> tests =
+</span></span><span style="display:flex;"><span>  describe <span style="color:#e6db74">&#34;math operations&#34;</span>
+</span></span><span style="display:flex;"><span>    [ test <span style="color:#e6db74">&#34;sum 1 + 1&#34;</span> (<span style="color:#66d9ef">fn</span> _ =&gt;
+</span></span><span style="display:flex;"><span>        Expect.equal Int.compare <span style="color:#ae81ff">2</span> (<span style="color:#ae81ff">1</span> + <span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> _ =
+</span></span><span style="display:flex;"><span>    run tests
 </span></span></code></pre></div><p>Check out the table of contents below for more information:</p>
 <ul>
 <li><a href="#smltest">smltest</a>
@@ -120,44 +97,26 @@ Usage
 </ul>
 </li>
 </ul>
-<h2 id="installing">
-Installing
-<a href="#installing" class="heading-anchor">#</a>
-</h2>
-<!-- TODO -->
-<h1 id="api-reference">
-API Reference
-<a href="#api-reference" class="heading-anchor">#</a>
-</h1>
-<h2 id="test">
-Test
-<a href="#test" class="heading-anchor">#</a>
-</h2>
+<h2 id="installing">Installing</h2>
+<!-- raw HTML omitted -->
+<h1 id="api-reference">API Reference</h1>
+<h2 id="test">Test</h2>
 <p>The <a href="#test"><code>Test</code></a> module consists of functions that are involved in
 creating and managing tests.</p>
-<h3 id="concat">
-concat
-<a href="#concat" class="heading-anchor">#</a>
-</h3>
+<h3 id="concat">concat</h3>
 <p><code>val concat: Test list -&gt; Test</code></p>
 <p>Concatenates a list of tests.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="n">concat</span> <span class="p">[</span> <span class="n">userTests</span><span class="p">,</span> <span class="n">baggageTests</span> <span class="p">]</span>
-</span></span></code></pre></div><h3 id="describe">
-describe
-<a href="#describe" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>concat [ userTests, baggageTests ]
+</span></span></code></pre></div><h3 id="describe">describe</h3>
 <p><code>val describe: string -&gt; Test list -&gt; Test</code></p>
 <p>Describes a list of tests.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="n">describe</span> <span class="s2">&#34;math operators&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span> <span class="n">test</span> <span class="s2">&#34;sum&#34;</span> <span class="p">(</span><span class="kr">fn</span> <span class="p">_</span> <span class="n">=&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nn">Expect.</span><span class="n">equal</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">2</span> <span class="p">(</span><span class="mi">1</span> <span class="n">+</span> <span class="mi">1</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">,</span> <span class="n">test</span> <span class="s2">&#34;failing sum&#34;</span> <span class="p">(</span><span class="kr">fn</span> <span class="p">_</span> <span class="n">=&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nn">Expect.</span><span class="n">equal</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">3</span> <span class="p">(</span><span class="mi">2</span> <span class="n">+</span> <span class="mi">3</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">]</span>
-</span></span></code></pre></div><h3 id="focus">
-focus
-<a href="#focus" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>describe <span style="color:#e6db74">&#34;math operators&#34;</span>
+</span></span><span style="display:flex;"><span>  [ test <span style="color:#e6db74">&#34;sum&#34;</span> (<span style="color:#66d9ef">fn</span> _ =&gt;
+</span></span><span style="display:flex;"><span>      Expect.equal Int.compare <span style="color:#ae81ff">2</span> (<span style="color:#ae81ff">1</span> + <span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>  , test <span style="color:#e6db74">&#34;failing sum&#34;</span> (<span style="color:#66d9ef">fn</span> _ =&gt;
+</span></span><span style="display:flex;"><span>      Expect.equal Int.compare <span style="color:#ae81ff">3</span> (<span style="color:#ae81ff">2</span> + <span style="color:#ae81ff">3</span>))
+</span></span><span style="display:flex;"><span>  ]
+</span></span></code></pre></div><h3 id="focus">focus</h3>
 <p><code>val focus: Test -&gt; Test</code></p>
 <p>Returns a <a href="#test"><code>Test</code></a> that causes other tests to be skipped, and
 only runs the given one.</p>
@@ -174,26 +133,17 @@ will affect which tests gets run.</p>
 <code>focus</code>; if you use a <code>skip</code> inside a <code>focus</code>, it will still get
 skipped, and if you use a <code>focus</code> inside a <code>skip</code>, it will also get
 skipped.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="n">describe</span> <span class="s2">&#34;math operators&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span> <span class="n">test</span> <span class="s2">&#34;sum&#34;</span> <span class="p">(</span><span class="kr">fn</span> <span class="p">_</span> <span class="n">=&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nn">Expect.</span><span class="n">equal</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">2</span> <span class="p">(</span><span class="mi">1</span> <span class="n">+</span> <span class="mi">1</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">,</span> <span class="n">focus</span> <span class="p">(</span><span class="n">test</span> <span class="s2">&#34;this is the only test that will run&#34;</span> <span class="p">(</span><span class="kr">fn</span> <span class="p">_</span> <span class="n">=&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nn">Expect.</span><span class="n">equal</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">3</span> <span class="p">(</span><span class="mi">2</span> <span class="n">+</span> <span class="mi">3</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">]</span>
-</span></span></code></pre></div><h3 id="run">
-run
-<a href="#run" class="heading-anchor">#</a>
-</h3>
-<!-- TODO -->
-<h3 id="runwithoptions">
-runwithoptions
-<a href="#runwithoptions" class="heading-anchor">#</a>
-</h3>
-<!-- TODO -->
-<h3 id="skip">
-skip
-<a href="#skip" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>describe <span style="color:#e6db74">&#34;math operators&#34;</span>
+</span></span><span style="display:flex;"><span>  [ test <span style="color:#e6db74">&#34;sum&#34;</span> (<span style="color:#66d9ef">fn</span> _ =&gt;
+</span></span><span style="display:flex;"><span>      Expect.equal Int.compare <span style="color:#ae81ff">2</span> (<span style="color:#ae81ff">1</span> + <span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>  , focus (test <span style="color:#e6db74">&#34;this is the only test that will run&#34;</span> (<span style="color:#66d9ef">fn</span> _ =&gt;
+</span></span><span style="display:flex;"><span>      Expect.equal Int.compare <span style="color:#ae81ff">3</span> (<span style="color:#ae81ff">2</span> + <span style="color:#ae81ff">3</span>)))
+</span></span><span style="display:flex;"><span>  ]
+</span></span></code></pre></div><h3 id="run">run</h3>
+<!-- raw HTML omitted -->
+<h3 id="runwithoptions">runwithoptions</h3>
+<!-- raw HTML omitted -->
+<h3 id="skip">skip</h3>
 <p><code>val skip: Test -&gt; Test</code></p>
 <p>Returns a <a href="#test"><code>Test</code></a> that gets skipped.</p>
 <p>Calls to <a href="#skip"><code>skip</code></a> aren&rsquo;t meant to be committed to version
@@ -206,284 +156,142 @@ control.</p>
 <code>focus</code>; if you use a <code>skip</code> inside a <code>focus</code>, it will still get
 skipped, and if you use a <code>focus</code> inside a <code>skip</code>, it will also get
 skipped.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="n">describe</span> <span class="s2">&#34;math operators&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span> <span class="n">test</span> <span class="s2">&#34;this test will be the only one to run&#34;</span> <span class="p">(</span><span class="kr">fn</span> <span class="p">_</span> <span class="n">=&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nn">Expect.</span><span class="n">equal</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">2</span> <span class="p">(</span><span class="mi">1</span> <span class="n">+</span> <span class="mi">1</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">,</span> <span class="n">skip</span> <span class="p">(</span><span class="n">test</span> <span class="s2">&#34;this test is skipped&#34;</span> <span class="p">(</span><span class="kr">fn</span> <span class="p">_</span> <span class="n">=&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nn">Expect.</span><span class="n">equal</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">3</span> <span class="p">(</span><span class="mi">2</span> <span class="n">+</span> <span class="mi">3</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">]</span>
-</span></span></code></pre></div><h3 id="test-1">
-test
-<a href="#test-1" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>describe <span style="color:#e6db74">&#34;math operators&#34;</span>
+</span></span><span style="display:flex;"><span>  [ test <span style="color:#e6db74">&#34;this test will be the only one to run&#34;</span> (<span style="color:#66d9ef">fn</span> _ =&gt;
+</span></span><span style="display:flex;"><span>      Expect.equal Int.compare <span style="color:#ae81ff">2</span> (<span style="color:#ae81ff">1</span> + <span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>  , skip (test <span style="color:#e6db74">&#34;this test is skipped&#34;</span> (<span style="color:#66d9ef">fn</span> _ =&gt;
+</span></span><span style="display:flex;"><span>      Expect.equal Int.compare <span style="color:#ae81ff">3</span> (<span style="color:#ae81ff">2</span> + <span style="color:#ae81ff">3</span>)))
+</span></span><span style="display:flex;"><span>  ]
+</span></span></code></pre></div><h3 id="test-1">test</h3>
 <p><code>val test: string -&gt; (unit -&gt; Expectation) -&gt; Test</code></p>
 <p>Return a <a href="#test"><code>Test</code></a> that evaluates a single <code>Expectation</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="n">test</span> <span class="s2">&#34;sum&#34;</span> <span class="p">(</span><span class="kr">fn</span> <span class="p">_</span> <span class="n">=&gt;</span> <span class="nn">Expect.</span><span class="n">equal</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">2</span> <span class="p">(</span><span class="mi">1</span> <span class="n">+</span> <span class="mi">1</span><span class="p">))</span>
-</span></span></code></pre></div><h2 id="expect">
-Expect
-<a href="#expect" class="heading-anchor">#</a>
-</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>test <span style="color:#e6db74">&#34;sum&#34;</span> (<span style="color:#66d9ef">fn</span> _ =&gt; Expect.equal Int.compare <span style="color:#ae81ff">2</span> (<span style="color:#ae81ff">1</span> + <span style="color:#ae81ff">1</span>))
+</span></span></code></pre></div><h2 id="expect">Expect</h2>
 <p>The <a href="#expect"><code>Expect</code></a> module consists of assertion functions that
 describes a claim to be tested.</p>
-<h3 id="actual">
-actual
-<a href="#actual" class="heading-anchor">#</a>
-</h3>
+<h3 id="actual">actual</h3>
 <p><code>type 'a actual = 'a</code></p>
 <p>Represents the actual value passed to an assertion function.</p>
-<h3 id="expected">
-expected
-<a href="#expected" class="heading-anchor">#</a>
-</h3>
+<h3 id="expected">expected</h3>
 <p><code>type 'a expected = 'a</code></p>
 <p>Represents the expected value passed to an assertion function.</p>
-<h3 id="comparer">
-comparer
-<a href="#comparer" class="heading-anchor">#</a>
-</h3>
+<h3 id="comparer">comparer</h3>
 <p><code>type 'a comparer = ('a expected * 'a actual) -&gt; General.order</code></p>
 <p>Represents a function that compares the <a href="#expected"><code>expected</code></a>
 against the <a href="#actual"><code>actual</code></a> value.</p>
-<h3 id="tostring">
-tostring
-<a href="#tostring" class="heading-anchor">#</a>
-</h3>
+<h3 id="tostring">tostring</h3>
 <p><code>type 'a tostring = 'a -&gt; string</code></p>
 <p>Represents a function that converts the given value to a <code>string</code>.</p>
-<h3 id="pass">
-pass
-<a href="#pass" class="heading-anchor">#</a>
-</h3>
+<h3 id="pass">pass</h3>
 <p><code>val pass: Expectation</code></p>
 <p>Always passes.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="n">test</span> <span class="s2">&#34;this sum is always two&#34;</span> <span class="p">(</span><span class="kr">fn</span> <span class="p">_</span> <span class="n">=&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">if</span> <span class="p">(</span><span class="mi">1</span> <span class="n">+</span> <span class="mi">1</span><span class="p">)</span> <span class="n">=</span> <span class="mi">2</span> <span class="kr">then</span>
-</span></span><span class="line"><span class="cl">    <span class="nn">Expect.</span><span class="n">pass</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">else</span>
-</span></span><span class="line"><span class="cl">    <span class="nn">Expect.</span><span class="n">fail</span> <span class="s2">&#34;man, something is up...&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="fail">
-fail
-<a href="#fail" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>test <span style="color:#e6db74">&#34;this sum is always two&#34;</span> (<span style="color:#66d9ef">fn</span> _ =&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#ae81ff">1</span> + <span style="color:#ae81ff">1</span>) = <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    Expect.pass
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    Expect.fail <span style="color:#e6db74">&#34;man, something is up...&#34;</span>)
+</span></span></code></pre></div><h3 id="fail">fail</h3>
 <p><code>val fail: string -&gt; Expectation</code></p>
 <p>Always fails.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="n">test</span> <span class="s2">&#34;this sum is always two&#34;</span> <span class="p">(</span><span class="kr">fn</span> <span class="p">_</span> <span class="n">=&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">if</span> <span class="p">(</span><span class="mi">1</span> <span class="n">+</span> <span class="mi">1</span><span class="p">)</span> <span class="n">=</span> <span class="mi">2</span> <span class="kr">then</span>
-</span></span><span class="line"><span class="cl">    <span class="nn">Expect.</span><span class="n">pass</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">else</span>
-</span></span><span class="line"><span class="cl">    <span class="nn">Expect.</span><span class="n">fail</span> <span class="s2">&#34;man, something is up...&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="onfail">
-onfail
-<a href="#onfail" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>test <span style="color:#e6db74">&#34;this sum is always two&#34;</span> (<span style="color:#66d9ef">fn</span> _ =&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#ae81ff">1</span> + <span style="color:#ae81ff">1</span>) = <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    Expect.pass
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    Expect.fail <span style="color:#e6db74">&#34;man, something is up...&#34;</span>)
+</span></span></code></pre></div><h3 id="onfail">onfail</h3>
 <p><code>val onfail: string -&gt; Expectation -&gt; Expectation</code></p>
 <p>If the given expectation fails, replace its failure message with a
 custom one.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="n">test</span> <span class="s2">&#34;sum&#34;</span> <span class="p">(</span><span class="kr">fn</span> <span class="p">_</span> <span class="n">=&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nn">Expect.</span><span class="n">onfail</span> 
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;this shouldn&#39;t be failing&#34;</span> 
-</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nn">Expect.</span><span class="n">equal</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">4</span> <span class="p">(</span><span class="mi">2</span> <span class="n">+</span> <span class="mi">2</span><span class="p">)))</span>
-</span></span></code></pre></div><h3 id="istrue">
-istrue
-<a href="#istrue" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>test <span style="color:#e6db74">&#34;sum&#34;</span> (<span style="color:#66d9ef">fn</span> _ =&gt;
+</span></span><span style="display:flex;"><span>  Expect.onfail 
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;this shouldn&#39;t be failing&#34;</span> 
+</span></span><span style="display:flex;"><span>    (Expect.equal Int.compare <span style="color:#ae81ff">4</span> (<span style="color:#ae81ff">2</span> + <span style="color:#ae81ff">2</span>)))
+</span></span></code></pre></div><h3 id="istrue">istrue</h3>
 <p><code>val istrue: bool actual -&gt; Expectation</code></p>
 <p>Passes if the provided value is <code>true</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">istrue</span> <span class="p">(</span><span class="mi">2</span> <span class="n">&gt;</span> <span class="mi">1</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="isfalse">
-isfalse
-<a href="#isfalse" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>Expect.istrue (<span style="color:#ae81ff">2</span> &gt; <span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><h3 id="isfalse">isfalse</h3>
 <p><code>val isfalse: bool actual -&gt; Expectation</code></p>
 <p>Passes if the provided value is <code>false</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">istrue</span> <span class="p">(</span><span class="mi">2</span> <span class="n">&lt;</span> <span class="mi">1</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="some">
-some
-<a href="#some" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>Expect.istrue (<span style="color:#ae81ff">2</span> &lt; <span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><h3 id="some">some</h3>
 <p><code>val some: 'a option actual -&gt; Expectation</code></p>
 <p>Passes if the provided value is <code>SOME</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="kr">val</span> <span class="nv">value</span> <span class="p">=</span> <span class="n">SOME</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">some</span> <span class="n">value</span>
-</span></span></code></pre></div><h3 id="none">
-none
-<a href="#none" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> value = SOME <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>Expect.some value
+</span></span></code></pre></div><h3 id="none">none</h3>
 <p><code>val none: 'a option actual -&gt; Expectation</code></p>
 <p>Passes if the provided value is <code>NONE</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="kr">val</span> <span class="nv">value</span> <span class="p">=</span> <span class="n">NONE</span>
-</span></span><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">none</span> <span class="n">value</span>
-</span></span></code></pre></div><h3 id="equal">
-equal
-<a href="#equal" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> value = NONE
+</span></span><span style="display:flex;"><span>Expect.none value
+</span></span></code></pre></div><h3 id="equal">equal</h3>
 <p><code>val equal: 'a comparer -&gt; 'a expected -&gt; 'a actual -&gt; Expectation</code></p>
 <p>Passes if the arguments are equal.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">equal</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">2</span> <span class="p">(</span><span class="mi">1</span> <span class="n">+</span> <span class="mi">1</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="equalfmt">
-equalfmt
-<a href="#equalfmt" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>Expect.equal Int.compare <span style="color:#ae81ff">2</span> (<span style="color:#ae81ff">1</span> + <span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><h3 id="equalfmt">equalfmt</h3>
 <p><code>val equalfmt: 'a comparer -&gt; 'a tostring -&gt; 'a expected -&gt; 'a actual -&gt; Expectation</code></p>
 <p>Passes if the arguments are equal, but receives a
 <a href="#tostring"><code>tostring</code></a> that encapsulates the values on the
 <code>Expectation</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">equalfmt</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="nn">Int.</span><span class="n">toString</span> <span class="mi">2</span> <span class="p">(</span><span class="mi">1</span> <span class="n">+</span> <span class="mi">1</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="notequal">
-notequal
-<a href="#notequal" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>Expect.equalfmt Int.compare Int.toString <span style="color:#ae81ff">2</span> (<span style="color:#ae81ff">1</span> + <span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><h3 id="notequal">notequal</h3>
 <p><code>val notequal: 'a comparer -&gt; 'a expected -&gt; 'a actual -&gt; Expectation</code></p>
 <p>Passes if the arguments are not equal.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">notequal</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">3</span> <span class="p">(</span><span class="mi">1</span> <span class="n">+</span> <span class="mi">1</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="notequalfmt">
-notequalfmt
-<a href="#notequalfmt" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>Expect.notequal Int.compare <span style="color:#ae81ff">3</span> (<span style="color:#ae81ff">1</span> + <span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><h3 id="notequalfmt">notequalfmt</h3>
 <p><code>val notequalfmt: 'a comparer -&gt; 'a tostring -&gt; 'a expected -&gt; 'a actual -&gt; Expectation</code></p>
 <p>Passes if the arguments are not equal, but receives a
 <a href="#tostring"><code>tostring</code></a> that encapsulates the values on the
 <code>Expectation</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">equalfmt</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="nn">Int.</span><span class="n">toString</span> <span class="mi">2</span> <span class="p">(</span><span class="mi">1</span> <span class="n">+</span> <span class="mi">1</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="atmost">
-atmost
-<a href="#atmost" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>Expect.equalfmt Int.compare Int.toString <span style="color:#ae81ff">2</span> (<span style="color:#ae81ff">1</span> + <span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><h3 id="atmost">atmost</h3>
 <p><code>val atmost: 'a comparer -&gt; 'a expected -&gt; 'a actual -&gt; Expectation</code></p>
 <p>Passes if the provide value is less or equal than the expected value.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">atmost</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">3</span> <span class="mi">2</span>
-</span></span><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">atmost</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">2</span> <span class="mi">2</span>
-</span></span></code></pre></div><h3 id="atmostfmt">
-atmostfmt
-<a href="#atmostfmt" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>Expect.atmost Int.compare <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>Expect.atmost Int.compare <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><h3 id="atmostfmt">atmostfmt</h3>
 <p><code>val atmostfmt: 'a comparer -&gt; 'a tostring-&gt; 'a expected-&gt; 'a actual-&gt; Expectation</code></p>
 <p>Passes if the provided value is less or equal than the expeted value,
 but receives a <a href="#tostring"><code>tostring</code></a> that encapsulates the values on
 the <code>Expectation</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">atmost</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="nn">Int.</span><span class="n">toString</span> <span class="mi">3</span> <span class="mi">2</span>
-</span></span><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">atmost</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="nn">Int.</span><span class="n">toString</span> <span class="mi">2</span> <span class="mi">2</span>
-</span></span></code></pre></div><h3 id="atleast">
-atleast
-<a href="#atleast" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>Expect.atmost Int.compare Int.toString <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>Expect.atmost Int.compare Int.toString <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><h3 id="atleast">atleast</h3>
 <p><code>val atleast: 'a comparer -&gt; 'a expected -&gt; 'a actual -&gt; Expectation</code></p>
 <p>Passes if the provide value is greater or equal than the expected
 value.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">atmost</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">3</span> <span class="mi">4</span>
-</span></span><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">atmost</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">3</span> <span class="mi">3</span>
-</span></span></code></pre></div><h3 id="atleastfmt">
-atleastfmt
-<a href="#atleastfmt" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>Expect.atmost Int.compare <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>Expect.atmost Int.compare <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">3</span>
+</span></span></code></pre></div><h3 id="atleastfmt">atleastfmt</h3>
 <p><code>val atleastfmt: 'a comparer -&gt; 'a tostring -&gt; 'a expected -&gt; 'a actual -&gt; Expectation</code></p>
 <p>Passes if the provided value is greater or equal than the expeted
 value, but receives a <a href="#tostring"><code>tostring</code></a> that encapsulates the
 values on the <code>Expectation</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">atmost</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="nn">Int.</span><span class="n">toString</span> <span class="mi">3</span> <span class="mi">4</span>
-</span></span><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">atmost</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="nn">Int.</span><span class="n">toString</span> <span class="mi">3</span> <span class="mi">3</span>
-</span></span></code></pre></div><h3 id="less">
-less
-<a href="#less" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>Expect.atmost Int.compare Int.toString <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>Expect.atmost Int.compare Int.toString <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">3</span>
+</span></span></code></pre></div><h3 id="less">less</h3>
 <p><code>val less: 'a comparer -&gt; 'a expected -&gt; 'a actual -&gt; Expectation</code></p>
 <p>Passes if the provided value is less than the expected value.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">notequal</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">3</span> <span class="p">(</span><span class="mi">1</span> <span class="n">+</span> <span class="mi">1</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="lessfmt">
-lessfmt
-<a href="#lessfmt" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>Expect.notequal Int.compare <span style="color:#ae81ff">3</span> (<span style="color:#ae81ff">1</span> + <span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><h3 id="lessfmt">lessfmt</h3>
 <p><code>val lessfmt: 'a comparer -&gt; 'a tostring -&gt; 'a expected -&gt; 'a actual -&gt; Expectation</code></p>
 <p>Passes if the provided value is less than the expeted value, but
 receives a <a href="#tostring"><code>tostring</code></a> that encapsulates the values on the
 <code>Expectation</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">atmost</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="nn">Int.</span><span class="n">toString</span> <span class="mi">3</span> <span class="mi">2</span>
-</span></span></code></pre></div><h3 id="greater">
-greater
-<a href="#greater" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>Expect.atmost Int.compare Int.toString <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><h3 id="greater">greater</h3>
 <p><code>val greater: 'a comparer -&gt; 'a expected -&gt; 'a actual -&gt; Expectation</code></p>
 <p>Passes if the provided value is greater than the expected value.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">notequal</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="mi">3</span> <span class="mi">4</span>
-</span></span></code></pre></div><h3 id="greaterfmt">
-greaterfmt
-<a href="#greaterfmt" class="heading-anchor">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>Expect.notequal Int.compare <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span>
+</span></span></code></pre></div><h3 id="greaterfmt">greaterfmt</h3>
 <p><code>val greaterfmt: 'a comparer -&gt; 'a tostring -&gt; 'a expected -&gt; 'a actual -&gt; Expectation</code></p>
 <p>Passes if the provided value is greater than the expeted value, but
 receives a <a href="#tostring"><code>tostring</code></a> that encapsulates the values on the
 <code>Expectation</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sml" data-lang="sml"><span class="line"><span class="cl"><span class="nn">Expect.</span><span class="n">atmost</span> <span class="nn">Int.</span><span class="n">compare</span> <span class="nn">Int.</span><span class="n">toString</span> <span class="mi">3</span> <span class="mi">4</span>
-</span></span></code></pre></div><h2 id="license">
-License
-<a href="#license" class="heading-anchor">#</a>
-</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>Expect.atmost Int.compare Int.toString <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span>
+</span></span></code></pre></div><h2 id="license">License</h2>
 <p><a href="https://choosealicense.com/licenses/apache-2.0/">Apache 2.0</a></p>
-</section>
-  <section><footer class="page-footer">
-<hr />
 
-<div class="previous-post" style="display:inline-block;">
-  
-</div>
-
-<div class="next-post", style="display:inline-block;float:right;">
-  
-</div>
-
-<ul class="page-footer-menu">
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-  
-</ul>
-
-
-
-
-
-</footer>
-</section>
-  <section><nav class="menu">
-    <ul>
-    
-        <li><a href="/">Home</a></li>
-    
-        <li><a href="/projects/">Projects</a></li>
-    
-        <li><a href="https://github.com/perplexsystems/">Source Code</a></li>
-    
-    </ul>
-</nav>
-</section>
-</article>
-
-
-
-
-
-</body>
-
+    </main>
+  </body>
 </html>
