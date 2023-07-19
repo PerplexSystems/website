@@ -30,9 +30,7 @@ nav:not(#TableOfContents) {
   }
 
   img {
-    @media(prefers-color-scheme: dark) {
-      filter: invert(.92);
-    }
+    padding-right: 28px;
   }
 
   h1 {
