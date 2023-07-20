@@ -58,7 +58,7 @@
     "gitignore": {
       "inputs": {
         "nixpkgs": [
-          "smltest",
+          "railroad",
           "devenv",
           "pre-commit-hooks",
           "nixpkgs"
@@ -98,7 +98,7 @@
       "inputs": {
         "lowdown-src": "lowdown-src",
         "nixpkgs": [
-          "smltest",
+          "railroad",
           "devenv",
           "nixpkgs"
         ],
@@ -202,14 +202,14 @@
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": [
-          "smltest",
+          "railroad",
           "devenv",
           "flake-compat"
         ],
         "flake-utils": "flake-utils",
         "gitignore": "gitignore",
         "nixpkgs": [
-          "smltest",
+          "railroad",
           "devenv",
           "nixpkgs"
         ],
@@ -229,29 +229,29 @@
         "type": "github"
       }
     },
-    "root": {
-      "inputs": {
-        "nixpkgs": "nixpkgs",
-        "smltest": "smltest"
-      }
-    },
-    "smltest": {
+    "railroad": {
       "inputs": {
         "devenv": "devenv",
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1689698522,
-        "narHash": "sha256-4LjVqWdP5Va618QxVL/O+4gZ54OSdBpFRrs0lBMfkE4=",
+        "lastModified": 1689820132,
+        "narHash": "sha256-2I75xiQZMmYskwr5rEzuKQSE+hZCepHajEsEo7OWV7k=",
         "owner": "PerplexSystems",
-        "repo": "smltest",
-        "rev": "88609d3b0fccb4236f5bec6bab7e642a0fa1da6e",
+        "repo": "Railroad",
+        "rev": "fb3a0c88c4fdb011b2b0a8c446822400708481b8",
         "type": "github"
       },
       "original": {
         "owner": "PerplexSystems",
-        "repo": "smltest",
+        "repo": "Railroad",
         "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "railroad": "railroad"
       }
     },
     "systems": {
