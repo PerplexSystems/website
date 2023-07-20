@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    smltest.url = "github:PerplexSystems/smltest";
+    railroad.url = "github:PerplexSystems/Railroad";
   };
 
   outputs = { nixpkgs, ... }@inputs:
@@ -9,10 +9,10 @@
       forEachSystem = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
     in
     {
-      packages = forEachSystem(system: 
+      packages = forEachSystem(system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          smltest = inputs.smltest.outputs.packages."${system}";
+          railroad = inputs.railroad.outputs.packages."${system}";
         in
       {
         default = pkgs.stdenv.mkDerivation {
@@ -23,7 +23,7 @@
 
           configurePhase = ''
             mkdir -p content/projects
-            cp -r ${smltest.docs}/* content/projects
+            cp -r ${railroad.docs}/* content/projects
           '';
 
           buildPhase = ''
