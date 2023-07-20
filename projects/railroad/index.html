@@ -26,9 +26,9 @@
 
 
     <main>
-  <h1>smltest
+  <h1>Railroad
     
-  </h1><p><a href="https://github.com/PerplexSystems/smltest/actions"><img src="https://github.com/PerplexSystems/smltest/actions/workflows/build.yml/badge.svg" alt="Build Status"></a>
+  </h1><p><a href="https://github.com/PerplexSystems/Railroad/actions"><img src="https://github.com/PerplexSystems/Railroad/actions/workflows/build.yml/badge.svg" alt="Build Status"></a>
 <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
 <a href="http://webchat.freenode.net/?channels=writeas"><img src="https://img.shields.io/badge/libera.chat-%23perplexsystems-blue.svg" alt="Perplex Systems on libera.chat"></a></p>
 <p>An advanced testing library and test runner for Standard ML, highly
@@ -36,7 +36,13 @@ inspired by <a href="https://github.com/elm-explorations/test">elm-test</a> and
 <a href="https://github.com/haf/expecto">Expecto</a>.</p>
 <p>This library provides a set of composable functions for writing tests,
 along with a built-in test runner.</p>
-<h2 id="usage">Usage</h2>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ git clone https://github.com/PerplexSystems/Railroad.git $YOUR_PROJECT/vendor/Railroad
+</span></span></code></pre></div><p>Then reference <code>vendor/Railroad/sources.mlb</code> on your project&rsquo;s <code>.mlb</code> file. Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span>$(SML_LIB)/basis/basis.mlb
+</span></span><span style="display:flex;"><span>lib/Railroad/sources.mlb
+</span></span><span style="display:flex;"><span>main.sml
+</span></span></code></pre></div><h2 id="usage">Usage</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> tests =
 </span></span><span style="display:flex;"><span>  describe <span style="color:#e6db74">&#34;math operations&#34;</span>
 </span></span><span style="display:flex;"><span>    [ test <span style="color:#e6db74">&#34;sum 1 + 1&#34;</span> (<span style="color:#66d9ef">fn</span> _ =&gt;
@@ -47,10 +53,10 @@ along with a built-in test runner.</p>
 </span></span><span style="display:flex;"><span>    run tests
 </span></span></code></pre></div><p>Check out the table of contents below for more information:</p>
 <ul>
-<li><a href="#smltest">smltest</a>
+<li><a href="#Railroad">Railroad</a>
 <ul>
+<li><a href="#installation">Installation</a></li>
 <li><a href="#usage">Usage</a></li>
-<li><a href="#installing">Installing</a></li>
 </ul>
 </li>
 <li><a href="#api-reference">API Reference</a>
@@ -97,8 +103,6 @@ along with a built-in test runner.</p>
 </ul>
 </li>
 </ul>
-<h2 id="installing">Installing</h2>
-<!-- raw HTML omitted -->
 <h1 id="api-reference">API Reference</h1>
 <h2 id="test">Test</h2>
 <p>The <a href="#test"><code>Test</code></a> module consists of functions that are involved in

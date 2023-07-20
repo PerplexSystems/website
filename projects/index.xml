@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://perplex.systems/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>smltest</title>
-      <link>https://perplex.systems/projects/smltest/</link>
+      <title>Railroad</title>
+      <link>https://perplex.systems/projects/railroad/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://perplex.systems/projects/smltest/</guid>
+      <guid>https://perplex.systems/projects/railroad/</guid>
       <description>An advanced testing library and test runner for Standard ML, highly inspired by elm-test and Expecto.
 This library provides a set of composable functions for writing tests, along with a built-in test runner.
-Usage val tests = describe &amp;#34;math operations&amp;#34; [ test &amp;#34;sum 1 + 1&amp;#34; (fn _ =&amp;gt; Expect.equal Int.compare 2 (1 + 1)) ] val _ = run tests Check out the table of contents below for more information:</description>
+Installation $ git clone https://github.com/PerplexSystems/Railroad.git $YOUR_PROJECT/vendor/Railroad Then reference vendor/Railroad/sources.mlb on your project&amp;rsquo;s .mlb file. Example:
+$(SML_LIB)/basis/basis.mlb lib/Railroad/sources.mlb main.sml Usage val tests = describe &amp;#34;math operations&amp;#34; [ test &amp;#34;sum 1 + 1&amp;#34; (fn _ =&amp;gt; Expect.equal Int.compare 2 (1 + 1)) ] val _ = run tests Check out the table of contents below for more information:</description>
     </item>
     
   </channel>
