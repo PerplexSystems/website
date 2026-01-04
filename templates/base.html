@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ config.title | default(value="Perplex Systems") }}{% endblock %}</title>
+
+    <meta property="og:title" content="{% block og_title %}{{ config.title | default(value="Perplex Systems") }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ config.extra.tagline | default(value="Software Craftsmanship & Research") }}{% endblock %}">
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:url" content="{% block og_url %}{{ config.base_url | safe }}{% endblock %}">
+    <meta property="og:site_name" content="{{ config.extra.site_name | default(value="Perplex Systems") }}">
+    {% if config.extra.logo %}
+    <meta property="og:image" content="{{ config.base_url | safe }}{{ config.extra.logo }}">
+    {% endif %}
+
+    <link href="{{ config.base_url | safe }}/base.css" rel="stylesheet" />
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <div class="header-top">
+            {% block header_top %}
+            <a href="/">Portal</a> | 
+            <a href="/sitemap.xml">Site Map</a> | 
+            <!-- TODO: add contact page -->
+            Contact Us
+            {% endblock %}
+        </div>
+
+        <header>
+            <div class="header-main">
+                <div class="logo-section">
+                    <div class="logo">
+                        {% if config.extra.logo %}
+                        <img src="{{ config.extra.logo }}" alt="Logo">
+                        {% else %}
+                        PS
+                        {% endif %}
+                    </div>
+                    <div>
+                        <h1>{{ config.extra.site_name | default(value="PERPLEX SYSTEMS") }}</h1>
+                        <div class="header-subtitle">{{ config.extra.tagline | default(value="Software Craftsmanship & Research") }}</div>
+                    </div>
+                </div>
+                <div style="text-align: right; font-size: 10px;">
+                    <div>{{ "1996-01-23" | date(format="%A, %B %d, %Y") }}</div>
+                    {% if config.extra.version %}
+                    <div style="margin-top: 3px;">Version {{ config.extra.version }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+
+        <nav class="nav-bar">
+            <ul>
+                {% block navigation %}
+                <li><a href="{{ config.base_url | safe }}" {% if current_path == "/" %}class="active"{% endif %}>Home</a></li>
+                <li><a href="{{ config.base_url | safe }}/projects" {% if current_path == "/projects/" %}class="active"{% endif %}>Projects</a></li>
+                <li><a href="{{ config.base_url | safe }}/blog" {% if current_path == "/blog/" %}class="active"{% endif %}>Blog</a></li>
+                <li><a href="{{ config.base_url | safe }}#about" {% if current_path == "/about/" %}class="active"{% endif %}>About</a></li>
+                {% endblock %}
+            </ul>
+        </nav>
+
+        <div class="breadcrumb">
+            {% block breadcrumb %}
+            <a href="{{ config.base_url | safe }}">Home</a> &gt; <span>{% block breadcrumb_current %}Portal{% endblock %}</span>
+            {% endblock %}
+        </div>
+
+        <div class="main-content">
+            {% block sidebar %}
+            <aside class="sidebar">
+                <!-- <div class="sidebar-section">
+                    <input type="checkbox" id="quick-links-toggle" class="sidebar-toggle" checked>
+                    <label for="quick-links-toggle" class="sidebar-label">Quick Links</label>
+                    <h3>Quick Links</h3>
+                    <div class="sidebar-content">
+                        <ul>
+                            <li><a href="#overview">Overview</a></li>
+                            <li><a href="{{ config.base_url | safe }}/projects">Projects</a></li>
+                            <li><a href="#about">About</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+
+                <div class="sidebar-section">
+                    <input type="checkbox" id="resources-toggle" class="sidebar-toggle">
+                    <label for="resources-toggle" class="sidebar-label">Resources</label>
+                    <h3>Resources</h3>
+                    <div class="sidebar-content">
+                        <ul>
+                            <li><a href="#docs">Documentation</a></li>
+                            <li><a href="#code">Source Code</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            {% endblock %}
+
+            <main class="content">
+                {% block content %}{% endblock %}
+            </main>
+
+            {% block right_sidebar %}
+            <aside class="right-sidebar">
+                <div class="news-section">
+                    <h3 style="color: #003366; font-size: 11px; margin-bottom: 12px; text-transform: uppercase; border-bottom: 2px solid #336699; padding-bottom: 5px;">Latest Updates</h3>
+                    <div class="news-content">
+                        {% block news_items %}
+                        {% set blog = get_section(path="blog/_index.md") %}
+                        {% for post in blog.pages | slice(end=5) %}
+                        <div class="news-item">
+                            <div class="news-date">{{ post.date | date(format="%B %d, %Y") }}</div>
+                            <div class="news-title"><a href="{{ post.permalink }}">{{ post.title }}</a></div>
+                            {% if post.description %}
+                            <p style="font-size: 10px; margin-top: 5px; color: #666;">{{ post.description }}</p>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </aside>
+            {% endblock %}
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#docs">Documentation</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        {% if config.extra.github %}
+                        <li><a href="{{ config.extra.github }}">GitHub</a></li>
+                        {% endif %}
+                        {% if config.extra.email %}
+                        <li><a href="mailto:{{ config.extra.email }}">Email</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; {{ now() | date(format="%Y") }} {{ config.extra.site_name | default(value="Perplex Systems") }}. All rights reserved.
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ config.extra.site_name | default(value="Perplex Systems") }}{% endblock %}
+
+{% block og_title %}{{ page.title }}{% endblock %}
+{% block og_description %}{{ page.description | default(value=config.extra.tagline) }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block og_url %}{{ page.permalink | safe }}{% endblock %}
+
+{% block breadcrumb %}
+<a href="{{ config.base_url | safe }}">Home</a>
+{% for ancestor in page.ancestors | slice(start=1) %}
+{% set anc = get_section(path=ancestor) %}
+&gt; <a href="{{ anc.permalink | safe }}">{{ anc.title }}</a>
+{% endfor %}
+&gt; <span>{{ page.title }}</span>
+{% endblock %}
+
+{% block content %}
+<section>
+    <h2>{{ page.title }}</h2>
+
+    {% if page.extra.project_id or page.extra.status or page.extra.lead %}
+    <div class="project-card" style="margin-bottom: 20px;">
+        <div class="project-meta">
+            {% if page.extra.project_id %}
+            <strong>Project ID:</strong> {{ page.extra.project_id }}<br>
+            {% endif %}
+            {% if page.extra.status %}
+            <strong>Status:</strong>
+            <span class="status-badge {% if page.extra.status == 'Production' %}status-complete{% elif page.extra.status == 'Development' %}status-progress{% else %}status-experimental{% endif %}">
+                {{ page.extra.status }}
+            </span><br>
+            {% endif %}
+            {% if page.extra.lead %}
+            <strong>Lead:</strong> {{ page.extra.lead }}<br>
+            {% endif %}
+            {% if page.extra.technologies %}
+            <strong>Technologies:</strong> {{ page.extra.technologies }}
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
+    {{ page.content | safe }}
+
+    {% if page.extra.docs_url or page.extra.source_url or page.extra.demo_url %}
+    <div style="margin-top: 20px;">
+        {% if page.extra.docs_url %}
+        <a href="{{ page.extra.docs_url }}" class="button">Documentation</a>
+        {% endif %}
+        {% if page.extra.source_url %}
+        <a href="{{ page.extra.source_url }}" class="button">Source Code</a>
+        {% endif %}
+        {% if page.extra.demo_url %}
+        <a href="{{ page.extra.demo_url }}" class="button button-primary">Demo</a>
+        {% endif %}
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

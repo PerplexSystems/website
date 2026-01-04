@@ -1,5 +1,0 @@
-baseURL = 'https://perplex.systems/'
-languageCode = 'en-us'
-title = 'Perplex Systems'
-
-theme = "Hare"

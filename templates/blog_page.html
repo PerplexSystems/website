@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ config.extra.site_name | default(value="Perplex Systems") }}{% endblock %}
+
+{% block og_title %}{{ page.title }}{% endblock %}
+{% block og_description %}{{ page.description | default(value=config.extra.tagline) }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block og_url %}{{ page.permalink | safe }}{% endblock %}
+
+{% block breadcrumb %}
+<a href="{{ config.base_url | safe }}">Home</a>
+{% for ancestor in page.ancestors | slice(start=1) %}
+{% set anc = get_section(path=ancestor) %}
+&gt; <a href="{{ anc.permalink | safe }}">{{ anc.title }}</a>
+{% endfor %}
+&gt; <span>{{ page.title }}</span>
+{% endblock %}
+
+{% block content %}
+<section>
+    <article>
+        <div class="article-header">
+            <h1 class="article-title">{{ page.title }}</h1>
+            <div class="article-meta">
+                <span class="meta-item">
+                    <strong>Published:</strong> <time>{{ page.date | date(format="%B %d, %Y") }}</time>
+                </span>
+                <span class="meta-item">
+                    <strong>Reading time:</strong> {{ page.reading_time }} min read
+                </span>
+            </div>
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-content">
+            {{ page.content | safe }}
+        </div>
+        
+        <div class="article-footer">
+        {% if page.taxonomies.tags %}
+            <div class="article-tags">
+                <strong>TAGS:</strong>
+                {% for tag in page.taxonomies.tags %}
+                <span class="tag">{{ tag | title }}</span>
+                {% endfor -%}
+            </div>
+        {% endif %}
+        </div>
+    </article>
+</section>
+{% endblock %}

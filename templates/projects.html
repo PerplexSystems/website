@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} | {{ config.extra.site_name | default(value="Perplex Systems") }}{% endblock %}
+
+{% block og_title %}{{ section.title }}{% endblock %}
+{% block og_description %}{{ section.description | default(value=config.extra.tagline) }}{% endblock %}
+{% block og_url %}{{ section.permalink | safe }}{% endblock %}
+
+{% block breadcrumb %}
+<a href="{{ config.base_url | safe }}">Home</a>
+{% for ancestor in section.ancestors | slice(start=1) %}
+{% set anc = get_section(path=ancestor) %}
+&gt; <a href="{{ anc.permalink | safe }}">{{ anc.title }}</a>
+{% endfor %}
+&gt; <span>{{ section.title }}</span>
+{% endblock %}
+
+{% block content %}
+<section>
+    <h2>{{ section.title }}</h2>
+
+    {{ section.content | safe }}
+
+    {% if section.subsections %}
+    <div style="margin-top: 20px;">
+        {% for subsection in section.subsections %}
+        {% set sub = get_section(path=subsection) %}
+        <div class="project-card">
+            <h3>{{ sub.title }}</h3>
+            {% if sub.description %}
+            <p class="project-tagline">{{ sub.description }}</p>
+            {% endif %}
+            <div class="project-meta">
+                <div class="project-meta-item"><strong>Source:</strong> <a href="{{ sub.extra.url | safe }}">GitHub</a></div>
+                <div class="project-meta-item"><strong>License:</strong> {{ sub.extra.license}}</div>
+                <div class="project-meta-item"><strong>Language:</strong> {{ sub.extra.language}}</div>
+            </div>
+            <div>
+                <a href="{{ sub.permalink | safe }}" class="button button-primary">Documentation</a>
+                <a href="{{ sub.extra.url | safe }}" class="button">Source code</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

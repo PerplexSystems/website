@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title | default(value="Home") }} | {{ config.extra.site_name | default(value="Perplex Systems") }}{% endblock %}
+
+{% block breadcrumb_current %}Home{% endblock %}
+
+{% block content %}
+<section id="home">
+    <h2>{{ section.title | default(value="Welcome") }}</h2>
+
+    {% if config.extra.announcement %}
+    <div class="announcement-box">
+        <h4>ANNOUNCEMENT</h4>
+        <p>{{ config.extra.announcement | safe }}</p>
+    </div>
+    {% endif %}
+
+    {{ section.content | safe }}
+
+    {% if config.extra.getting_started %}
+    <div class="info-box">
+        <h4>Getting Started</h4>
+        <p>{{ config.extra.getting_started | safe }}</p>
+    </div>
+    {% endif %}
+</section>
+
+{% if section.pages %}
+<section id="projects" style="margin-top: 30px;">
+    <h2>Projects</h2>
+
+    {% for page in section.pages %}
+    <div class="project-card">
+        <h3>{{ page.title }}</h3>
+        {% if page.extra.project_id or page.extra.status or page.extra.lead %}
+        <div class="project-meta">
+            {% if page.extra.project_id %}
+            <strong>Project ID:</strong> {{ page.extra.project_id }} |
+            {% endif %}
+            {% if page.extra.status %}
+            <strong>Status:</strong>
+            <span class="status-badge {% if page.extra.status == 'Production' %}status-complete{% elif page.extra.status == 'Development' %}status-progress{% else %}status-experimental{% endif %}">
+                {{ page.extra.status }}
+            </span> |
+            {% endif %}
+            {% if page.extra.lead %}
+            <strong>Lead:</strong> {{ page.extra.lead }}
+            {% endif %}
+        </div>
+        {% endif %}
+        <p style="margin-top: 10px;">{{ page.description | default(value=page.summary) }}</p>
+        {% if page.extra.technologies %}
+        <div class="project-meta">
+            <strong>Technologies:</strong> {{ page.extra.technologies }}
+        </div>
+        {% endif %}
+        <div style="margin-top: 12px;">
+            <a href="{{ page.permalink | safe }}" class="button button-primary">View Details</a>
+            {% if page.extra.docs_url %}
+            <a href="{{ page.extra.docs_url }}" class="button">Documentation</a>
+            {% endif %}
+            {% if page.extra.source_url %}
+            <a href="{{ page.extra.source_url }}" class="button">Source Code</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% endif %}
+{% endblock %}

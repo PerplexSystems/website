@@ -1,4 +1,6 @@
-# About
++++
+title = "Welcome"
++++
 
 Welcome to Perplex Systems, where we humbly embrace the journey of
 enlightenment in software craftsmanship and its tenets. "I have been

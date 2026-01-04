@@ -1,7 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    railroad.url = "github:PerplexSystems/Railroad";
   };
 
   outputs =
@@ -14,22 +13,16 @@
         system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          railroad = inputs.railroad.outputs.packages."${system}";
         in
         {
           default = pkgs.stdenv.mkDerivation {
             name = "perplex-systems-website";
             src = ./.;
 
-            buildInputs = [ pkgs.hugo ];
-
-            configurePhase = ''
-              mkdir -p content/projects
-              cp -r ${railroad.docs}/* content/projects
-            '';
+            buildInputs = [ pkgs.zola ];
 
             buildPhase = ''
-              hugo
+              zola build
             '';
 
             installPhase = ''

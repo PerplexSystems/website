@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} | {{ config.extra.site_name | default(value="Perplex Systems") }}{% endblock %}
+
+{% block og_title %}{{ section.title }}{% endblock %}
+{% block og_description %}{{ section.description | default(value=config.extra.tagline) }}{% endblock %}
+{% block og_url %}{{ section.permalink | safe }}{% endblock %}
+
+{% block breadcrumb %}
+<a href="{{ config.base_url | safe }}">Home</a>
+{% for ancestor in section.ancestors | slice(start=1) %}
+{% set anc = get_section(path=ancestor) %}
+&gt; <a href="{{ anc.permalink | safe }}">{{ anc.title }}</a>
+{% endfor %}
+&gt; <span>{{ section.title }}</span>
+{% endblock %}
+
+{% block right_sidebar %}
+{% endblock %}
+
+{% block content %}
+<section>
+    <h2>{{ section.title }}</h2>
+
+    {{ section.content | safe }}
+    
+    {% if section.pages %}
+    {% for page in section.pages %}
+    <article class="blog-post">
+        <div class="blog-header">
+            <h3 class="blog-title">
+                <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+            </h3>
+            <div class="blog-meta">
+                <span class="blog-meta-item">
+                    <strong>Posted:</strong> {{ page.date | date(format="%B %d, %Y") }}
+                </span>
+            </div>
+        </div>
+        <div class="blog-description">
+            {{ page.description }}
+        </div>
+        <div class="blog-footer">
+            {% if page.taxonomies.tags %}
+                <div class="blog-tags">
+                {% set post_tags = page.taxonomies.tags | sort | unique(case_sensitive=false) %}
+                {% for tag in post_tags %}
+                    <span class="tag">{{ tag | title }}</span>
+                {% endfor -%}
+                </div>
+            {% endif %}
+            <a href="{{ page.permalink | safe }}" class="button button-primary">Read More</a>
+        </div>
+    </article>
+    {% endfor %}
+    {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,53 @@
+# The URL the site will be built for
+base_url = "https://perplex.systems"
+
+# Site title
+title = "Perplex Systems"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = false
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+# The default language
+default_language = "en"
+
+# Whether to generate feed
+generate_feeds = false
+
+taxonomies = [
+    {name = "tags", render = false},
+]
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+github_alerts = true
+insert_anchor_links = "heading"
+
+[extra]
+# Site name displayed in header
+site_name = "Perplex Systems"
+
+# Tagline displayed under site name
+tagline = "Software Craftsmanship & Research"
+
+# Logo image path (relative to static folder)
+logo = "/logo.jpeg"
+
+# Version number displayed in header (optional)
+# version = "1.0.0"
+
+# GitHub URL (optional)
+# github = "https://github.com/perplex-systems"
+
+# Contact email (optional)
+# email = "contact@perplex.systems"
+
+# Announcement shown on homepage (optional, supports HTML)
+# announcement = "<strong>New:</strong> Check out our latest project! <a href='#'>Learn more</a>"
+
+# Getting started info box (optional, supports HTML)
+# getting_started = "New here? Check out our <a href='#'>documentation</a> to get started."
