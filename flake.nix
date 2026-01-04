@@ -4,48 +4,52 @@
     railroad.url = "github:PerplexSystems/Railroad";
   };
 
-  outputs = { nixpkgs, ... }@inputs:
+  outputs =
+    { nixpkgs, ... }@inputs:
     let
       forEachSystem = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
     in
     {
-      packages = forEachSystem(system:
+      packages = forEachSystem (
+        system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
           railroad = inputs.railroad.outputs.packages."${system}";
         in
-      {
-        default = pkgs.stdenv.mkDerivation {
-          name = "perplex-systems-website";
-          src = ./.;
+        {
+          default = pkgs.stdenv.mkDerivation {
+            name = "perplex-systems-website";
+            src = ./.;
 
-          buildInputs=  [ pkgs.hugo ];
+            buildInputs = [ pkgs.hugo ];
 
-          configurePhase = ''
-            mkdir -p content/projects
-            cp -r ${railroad.docs}/* content/projects
-          '';
+            configurePhase = ''
+              mkdir -p content/projects
+              cp -r ${railroad.docs}/* content/projects
+            '';
 
-          buildPhase = ''
-            hugo
-          '';
+            buildPhase = ''
+              hugo
+            '';
 
-          installPhase = ''
-            mkdir -p $out
-            cp -r public/* $out
-          '';
-        };
-      });
+            installPhase = ''
+              mkdir -p $out
+              cp -r public/* $out
+            '';
+          };
+        }
+      );
 
-      devShells = forEachSystem
-        (system:
-          let
-            pkgs = nixpkgs.legacyPackages.${system};
-          in
-          {
-            default = pkgs.mkShell {
-              buildInputs = [ pkgs.hugo pkgs.hut ];
-            };
-          });
+      devShells = forEachSystem (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        {
+          default = pkgs.mkShell {
+            buildInputs = [ pkgs.zola ];
+          };
+        }
+      );
     };
 }
