@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Perplex Systems</title>
+    <link rel="self" type="application/atom+xml" href="https://perplex.systems/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://perplex.systems"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-01-04T00:00:00+00:00</updated>
+    <id>https://perplex.systems/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Rethinking our website</title>
+        <published>2025-01-04T00:00:00+00:00</published>
+        <updated>2025-01-04T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://perplex.systems/blog/website-rethinking/"/>
+        <id>https://perplex.systems/blog/website-rethinking/</id>
+        
+        <content type="html" xml:base="https://perplex.systems/blog/website-rethinking/">&lt;p&gt;Since the inception of Perplex Systems© our website wandered the
+digital space in a solid but confused outfit. Rocking a black t-shirt
+with blue denim pants. Sometimes even risking a white t-shirt. It&#x27;s a
+clean outfit, timeless and... souless. It might have dressed skinny
+ripped jeans and chunky shoes once, but not even the comically large
+foam of its shoe&#x27;s sole held down the image to be emphasize.&lt;&#x2F;p&gt;
+&lt;p&gt;Somehow, clarity struck us and it&#x27;s done looking neutral. It is the
+cuffed brown trousers with orthopedic leather dress shoes.
+&lt;strong&gt;Unapologetically corporate&lt;&#x2F;strong&gt;. Reliable. You might not notice it
+at first, but it&#x27;s around. Its steps are nearly silent on the carpet
+tiles, muted by quarterly goals and irrelevant KPIs. Awkward laughs
+are getting louder, the expresso aroma invades your personal space.&lt;&#x2F;p&gt;
+&lt;p&gt;By the time you turn your head, another &quot;&lt;em&gt;reorg&lt;&#x2F;em&gt;&quot; is announced.
+Departments are rearranged. Teams dissolve. The flooring is now
+composed of Terrazzo tiles. Someone messages you: &quot;Let&#x27;s take this
+offline.&quot;.&lt;&#x2F;p&gt;
+&lt;p&gt;It bears no voice or control over this ritual. It observes you packing
+as many before.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
