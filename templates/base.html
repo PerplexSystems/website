@@ -72,18 +72,23 @@
         <div class="main-content">
             {% block sidebar %}
             <aside class="sidebar">
-                <!-- <div class="sidebar-section">
+
+                {% set quick_links = page.extra.quick_links | default(value=section.extra.quick_links | default(value=false)) %}
+                {% if quick_links %}
+                <div class="sidebar-section">
                     <input type="checkbox" id="quick-links-toggle" class="sidebar-toggle" checked>
                     <label for="quick-links-toggle" class="sidebar-label">Quick Links</label>
                     <h3>Quick Links</h3>
                     <div class="sidebar-content">
                         <ul>
-                            <li><a href="#overview">Overview</a></li>
-                            <li><a href="{{ config.base_url | safe }}/projects">Projects</a></li>
-                            <li><a href="#about">About</a></li>
+                        {% for link in quick_links %}
+                        <li><a href="#{{ link.anchor }}">{{ link.title }}</a></li>
+                        {% endfor %}
                         </ul>
                     </div>
-                </div> -->
+                </div>
+                {% endif %}
+
 
                 <div class="sidebar-section">
                     <input type="checkbox" id="resources-toggle" class="sidebar-toggle">
