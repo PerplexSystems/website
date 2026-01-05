@@ -1,5 +1,5 @@
 +++
-title = "Rethinking of our website"
+title = "Rethinking our website"
 description = "Cuffed brown trousers with orthopedic leather dress shoes is our motto."
 date = "2025-01-04"
 
