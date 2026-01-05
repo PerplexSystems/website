@@ -90,13 +90,16 @@
 
 
                 <div class="sidebar-section">
-                    <input type="checkbox" id="resources-toggle" class="sidebar-toggle">
-                    <label for="resources-toggle" class="sidebar-label">Resources</label>
-                    <h3>Resources</h3>
+                    <input type="checkbox" id="projects-toggle" class="sidebar-toggle" checked>
+                    <label for="projects-toggle" class="sidebar-label">Projects</label>
+                    <h3>Projects</h3>
                     <div class="sidebar-content">
                         <ul>
-                            <li><a href="#docs">Documentation</a></li>
-                            <li><a href="#code">Source Code</a></li>
+                        {% set projects = get_section(path="projects/_index.md") %}
+                        {% for path in projects.subsections %}
+                            {% set project = get_section(path=path) %}
+                            <li><a href="{{ project.permalink }}">{{ project.title }}</a></li>
+                        {% endfor %}
                         </ul>
                     </div>
                 </div>
