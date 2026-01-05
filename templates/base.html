@@ -58,7 +58,6 @@
                 <li><a href="{{ config.base_url | safe }}" {% if current_path == "/" %}class="active"{% endif %}>Home</a></li>
                 <li><a href="{{ config.base_url | safe }}/projects" {% if current_path == "/projects/" %}class="active"{% endif %}>Projects</a></li>
                 <li><a href="{{ config.base_url | safe }}/blog" {% if current_path == "/blog/" %}class="active"{% endif %}>Blog</a></li>
-                <li><a href="{{ config.base_url | safe }}#about" {% if current_path == "/about/" %}class="active"{% endif %}>About</a></li>
                 {% endblock %}
             </ul>
         </nav>
@@ -136,7 +135,6 @@
                 <div class="footer-section">
                     <h4>About</h4>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
