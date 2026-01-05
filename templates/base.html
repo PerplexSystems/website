@@ -88,6 +88,70 @@
                 </div>
                 {% endif %}
 
+                {% set is_project_page = current_path is starting_with("/projects/") and current_path != "/projects/" %}
+                {% set toc = section.toc | default(value=page.toc | default(value=[])) %}
+                {% if is_project_page and toc %}
+                <div class="sidebar-section">
+                    <input type="checkbox" id="toc-toggle" class="sidebar-toggle" checked>
+                    <label for="toc-toggle" class="sidebar-label">Contents</label>
+                    <h3>Contents</h3>
+                    <div class="sidebar-content">
+                        <ul class="toc">
+                        {% for h1 in toc %}
+                            <li class="toc-item{% if h1.children %} toc-has-children{% endif %}">
+                            {% if h1.children %}
+                            <input type="checkbox" id="toc-{{ h1.id }}" class="toc-item-toggle" checked>
+                            <label for="toc-{{ h1.id }}" class="toc-item-label"><a href="#{{ h1.id }}">{{ h1.title }}</a></label>
+                            <ul class="toc-nested">
+                            {% for h2 in h1.children %}
+                                <li class="toc-item{% if h2.children %} toc-has-children{% endif %}">
+                                {% if h2.children %}
+                                <input type="checkbox" id="toc-{{ h2.id }}" class="toc-item-toggle">
+                                <label for="toc-{{ h2.id }}" class="toc-item-label"><a href="#{{ h2.id }}">{{ h2.title }}</a></label>
+                                <ul class="toc-nested">
+                                {% for h3 in h2.children %}
+                                    <li class="toc-item{% if h3.children %} toc-has-children{% endif %}">
+                                    {% if h3.children %}
+                                    <input type="checkbox" id="toc-{{ h3.id }}" class="toc-item-toggle">
+                                    <label for="toc-{{ h3.id }}" class="toc-item-label"><a href="#{{ h3.id }}">{{ h3.title }}</a></label>
+                                    <ul class="toc-nested">
+                                    {% for h4 in h3.children %}
+                                        <li class="toc-item{% if h4.children %} toc-has-children{% endif %}">
+                                        {% if h4.children %}
+                                        <input type="checkbox" id="toc-{{ h4.id }}" class="toc-item-toggle">
+                                        <label for="toc-{{ h4.id }}" class="toc-item-label"><a href="#{{ h4.id }}">{{ h4.title }}</a></label>
+                                        <ul class="toc-nested">
+                                        {% for h5 in h4.children %}
+                                            <li class="toc-item"><a href="#{{ h5.id }}">{{ h5.title }}</a></li>
+                                        {% endfor %}
+                                        </ul>
+                                        {% else %}
+                                        <a href="#{{ h4.id }}">{{ h4.title }}</a>
+                                        {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                    </ul>
+                                    {% else %}
+                                    <a href="#{{ h3.id }}">{{ h3.title }}</a>
+                                    {% endif %}
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                                {% else %}
+                                <a href="#{{ h2.id }}">{{ h2.title }}</a>
+                                {% endif %}
+                                </li>
+                            {% endfor %}
+                            </ul>
+                            {% else %}
+                            <a href="#{{ h1.id }}">{{ h1.title }}</a>
+                            {% endif %}
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
 
                 <div class="sidebar-section">
                     <input type="checkbox" id="projects-toggle" class="sidebar-toggle" checked>
