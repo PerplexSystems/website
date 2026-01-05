@@ -318,21 +318,22 @@ header h1 {
     margin-bottom: 15px;
   }
 
-  & .project-meta {
-    display: flex;
-    gap: 20px;
-    font-size: 11px;
-    color: #666;
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #d0d0d0;
-  }
-
   & .project-meta-item {
     display: flex;
     align-items: center;
     gap: 5px;
   }
+}
+
+.project-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 11px;
+  color: #666;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #d0d0d0;
+  margin-bottom: 15px;
 }
 
 .project-card:hover {
@@ -748,6 +749,18 @@ tr:hover td {
 
   .news-content {
     max-height: none;
+  }
+
+  .project-header {
+    padding: 15px;
+  }
+
+  .project-title {
+    font-size: 16px;
+  }
+  .project-meta {
+    flex-direction: column;
+    gap: 5px;
   }
 }
 
